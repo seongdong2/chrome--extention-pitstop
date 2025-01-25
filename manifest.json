@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "something",
+  "description": "This is something new",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "html/popup.html",
+    "default_icon": {
+      "16": "images/news_icon.png",
+      "48": "images/news_icon.png",
+      "128": "images/news_icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://n.news.naver.com/article/*"],
+      "js": ["js/content.js"]
+    }
+  ]
+}
