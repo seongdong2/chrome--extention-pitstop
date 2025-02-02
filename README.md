@@ -1,10 +1,10 @@
 [크롬 익스텐션]
-- 네이버에서 기자가 받은 리액션을 표로 표시
+- 네이버에서 기자가 받은 리액션 표시
 - contens.js에서 크롬 local로 정보 수집
 - popup.js 에서 크롬 local 값 정보 사용
 
 popup.html
-- 요청과 동시에 content.js 수행₩₩
+- 요청과 동시에 content.js 수행
 - 팝업 창 클릭 시 popup.js 수행
 
 content.js
