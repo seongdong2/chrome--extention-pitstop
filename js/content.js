@@ -9,12 +9,12 @@ const journalistNameElement = document.querySelector('.media_end_head_journalist
  4. 기사의 기자 평가 parsing
  5. 평가가 모두 0이 아니면 > 7번 > 8번
  6. 평가가 모두 0이면 > 7번 스킵 > 8번
- 7. uri로 평가 추가
+ 7. (선택) uri로 평가 추가
  8. uri로 평가 평균 조회
  9. 조회된 평균이 모두 0이면 > 12번
  10. 조회된 평균이 모두 0이 아니면 > 11번
- 11. 평균을 chrome storage로 set
- 12. "부족한 데이터로 조회가 어렵습니다." 표시
+ 11. (결과 1) 평균을 chrome storage로 set
+ 12. (결과 2) "부족한 데이터로 조회가 어렵습니다." 표시
 **/
 
 function updateLikeCount() {
