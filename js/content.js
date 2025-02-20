@@ -38,15 +38,24 @@ if (journalistNameElement) {
 }
 
 //@urlParsing
-const journalistUrlElement = document.querySelector('div.media_journalistcard_summary_info a:first-child');
+const journalistUrlElement = document.querySelector('div.media_journalistcard_summary_text a:first-child');
+
+console.log('test1')
+console.log(journalistUrlElement)
+console.log('test2')
 
 //@urlValidate
-const response = fetch("<https://@>");
+fetch("http://144.24.93.80:8088/api/journalist/validate", {
+    method: "POST",
+    body: JSON.stringify({
+        "journalisturl" : journalistUrlElement,
+    }),
+})
+.then((response) => response.json())
+.then((result) => console.log(result));
 
 //@urlAdd - url가 없으면 추가
-if(response){
- fetch("<https://@>");
-}
+
 
 function updateLikeCount() {
   const likeCountElement = document.querySelectorAll('div._reactionModule.u_likeit.nv_notrans span.u_likeit_list_count._count');
@@ -62,16 +71,16 @@ function updateLikeCount() {
   const analyticalcount = parseInt(analyticaltext);
   const recommendcount = parseInt(recommendtext);
 
-//  chrome.storage.local.set({ useful: usefulcount, wow: wowcount, touched: touchedcount, analytical: analyticalcount, recommend: recommendcount }, function(){
-//  });
+  chrome.storage.local.set({ useful: usefulcount, wow: wowcount, touched: touchedcount, analytical: analyticalcount, recommend: recommendcount }, function(){
+  });
 }
 
 //@setStorage
 setTimeout(function() {
     updateLikeCount();
-    if (usefultext !== '0' && wowtext !== '0' && touchedtext !== '0' && analyticaltext !== '0' && recommendtext !== '0') {
-      console.log("parsing된 점수가 모두 0인 경우가 아니면 기자 점수 추가");
-    }
+//    if (usefultext !== '0' && wowtext !== '0' && touchedtext !== '0' && analyticaltext !== '0' && recommendtext !== '0') {
+//      console.log("parsing된 점수가 모두 0인 경우가 아니면 기자 점수 추가");
+//    }
     console.log("평균 점수 조회");
     console.log("평균 모두 0이면 '부족한 데이터로 조회가 어렵습니다.' text 출력");
     console.log("평균 모두 0이 아니면 chrome.storage.local.set");
